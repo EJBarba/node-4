@@ -18,7 +18,8 @@ massive({
 
   // server/index.js - register the handler
   app.post("/api/register", users.register);
-  app.get("/api/debug", users.debug);
+  app.get("/api/protected/data", users.auth);
+  app.post("/api/login", users.login);
 
   const PORT = 3001;
   app.listen(PORT, () => {
